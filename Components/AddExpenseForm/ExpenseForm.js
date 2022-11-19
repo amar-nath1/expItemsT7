@@ -18,9 +18,17 @@ const ExpenseForm = () => {
     const dateChangeHandler=(e)=>{
         setEnteredDate(e.target.value)
     }
+    function showExpense(event){
+
+        event.preventDefault()
+        const obj={Title:enteredTitle,
+        Amount:enteredAmount,
+        Date:new Date(enteredDate).toLocaleDateString()}
+        console.log(obj)
+    }
 
     return (
-        <form>
+        <form onSubmit={showExpense}>
             <div className='new-expense__controls'>
 
                 <div className='new-expense__control'>
