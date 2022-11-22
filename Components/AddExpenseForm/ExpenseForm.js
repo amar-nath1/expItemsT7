@@ -23,7 +23,7 @@ const ExpenseForm = (props) => {
         event.preventDefault()
         const obj={key:Math.random().toFixed(3)*100,
             title:enteredTitle,
-        amount:enteredAmount,
+        amount:+enteredAmount,
         date:new Date(enteredDate)}
         props.formData(obj)
         setEnteredTitle('')
