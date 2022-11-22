@@ -21,7 +21,8 @@ const ExpenseForm = (props) => {
     function showExpense(event){
 
         event.preventDefault()
-        const obj={title:enteredTitle,
+        const obj={key:Math.random().toFixed(3)*100,
+            title:enteredTitle,
         amount:enteredAmount,
         date:new Date(enteredDate)}
         props.formData(obj)
@@ -48,7 +49,8 @@ const ExpenseForm = (props) => {
 
             </div>
             <div className='new-expense__actions'>
-                <button type='submit'>Add Expense</button></div>
+            <button type='button' onClick={props.onCancel}>Cancel</button>
+                <button type='submit'>Submit</button></div>
         </form>
     )
 

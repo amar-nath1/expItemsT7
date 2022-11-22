@@ -2,6 +2,7 @@ import Expenses from "./Components/Expenses/Expenses";
 import Addexpense from "./Components/AddExpenseForm/Addexpense";
 import React, {useState} from "react";
 
+
 const App=() =>{
 
   let expense = [
@@ -43,11 +44,9 @@ const App=() =>{
     
   }
 
-
   return (
     <div>
-      <Addexpense newExpData={getNewExpData}></Addexpense>
-      
+       <Addexpense newExpData={getNewExpData}></Addexpense>
       <Expenses items={expArr}></Expenses>
       
     </div>
