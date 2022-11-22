@@ -2,13 +2,17 @@
 import './AddExpense.css'
 import ExpenseForm from './ExpenseForm'
 
-function Addexpense(){
+function Addexpense(props){
+    const onFormData=dataObj=>{
 
+        props.newExpData(dataObj)
+        
+    }
     
 
     return (
         <div className='new-expense'>
-            <ExpenseForm></ExpenseForm>
+            <ExpenseForm formData={onFormData}></ExpenseForm>
         </div>
         
     )
