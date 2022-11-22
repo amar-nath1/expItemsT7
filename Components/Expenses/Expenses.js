@@ -1,4 +1,4 @@
-import ExpenseItem from "./ExpenseItem";
+import ExpenseList from './ExpenseList';
 import './Expenses.css'
 import ExpenseFilter from "./ExpenseFilter";
 
@@ -29,14 +29,13 @@ if (filteredYear==='All'){
 }
 else{arrToShow=filteredItems}
 
+
+
   return (
     <Card className='expenses'>
       <ExpenseFilter selected={filteredYear} onChangeFilter={filterChangeHandler}></ExpenseFilter>
-      {arrToShow.map((exp)=>(
-
-        <ExpenseItem key={exp.key} title={exp.title} amount={exp.amount} date={exp.date}></ExpenseItem>
-
-      ))}
+      <ExpenseList listItems={arrToShow}></ExpenseList>
+            
     </Card>
       )
 }
